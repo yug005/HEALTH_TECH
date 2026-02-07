@@ -1,0 +1,517 @@
+/*
+ * =========================================
+ * HealthTech Demo - CSS Styles
+ * =========================================
+ * 
+ * Simple, clean styling with:
+ * - Light background
+ * - Colored buttons
+ * - Card-based layouts
+ * - Responsive design
+ * 
+ * Color Palette:
+ * - Primary (Blue): #3498db
+ * - Success (Green): #27ae60
+ * - Warning (Orange): #f39c12
+ * - Danger (Red): #e74c3c
+ * - Background: #f5f7fa
+ * - Card Background: #ffffff
+ * =========================================
+ */
+
+/* CSS Variables */
+:root {
+    --primary-color: #3498db;
+    --primary-hover: #2980b9;
+    --success-color: #27ae60;
+    --success-hover: #219a52;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --danger-hover: #c0392b;
+    --background-color: #f5f7fa;
+    --card-background: #ffffff;
+    --text-color: #2c3e50;
+    --text-light: #7f8c8d;
+    --border-color: #dfe6e9;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --border-radius: 8px;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========== HEADER / NAVIGATION ========== */
+header {
+    background-color: var(--card-background);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+#nav-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: none;
+    border: 2px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.nav-btn.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.nav-btn.logout {
+    border-color: var(--danger-color);
+    color: var(--danger-color);
+}
+
+.nav-btn.logout:hover {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.user-greeting {
+    color: var(--success-color);
+    font-weight: 500;
+}
+
+/* ========== MAIN CONTAINER ========== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    flex: 1;
+}
+
+/* ========== SECTIONS ========== */
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.section-subtitle {
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+/* ========== ALERT BOX ========== */
+.alert {
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert.warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+/* ========== AUTH FORMS ========== */
+.auth-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: var(--card-background);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--text-light);
+}
+
+.form-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background-color: #ccd0d2;
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: var(--success-hover);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: var(--danger-hover);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ========== DOCTORS GRID ========== */
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.doctor-card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.doctor-card h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.doctor-specialty {
+    display: inline-block;
+    background-color: #e8f4fc;
+    color: var(--primary-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.doctor-info {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.doctor-info p {
+    margin-bottom: 5px;
+}
+
+.doctor-status {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.doctor-status.available {
+    color: var(--success-color);
+}
+
+.doctor-status.unavailable {
+    color: var(--danger-color);
+}
+
+/* ========== BOOKING SECTION ========== */
+.booking-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.selected-doctor {
+    background-color: #e8f4fc;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 25px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.selected-doctor h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.selected-doctor p {
+    color: var(--text-light);
+}
+
+.booking-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.booking-buttons .btn {
+    flex: 1;
+}
+
+/* ========== APPOINTMENTS LIST ========== */
+.appointments-list {
+    display: grid;
+    gap: 20px;
+}
+
+.appointment-card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.appointment-info h3 {
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.appointment-info p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+}
+
+.appointment-status {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.appointment-status.scheduled {
+    background-color: #e8f4fc;
+    color: var(--primary-color);
+}
+
+.appointment-status.confirmed {
+    background-color: #d4edda;
+    color: var(--success-color);
+}
+
+.appointment-status.cancelled {
+    background-color: #f8d7da;
+    color: var(--danger-color);
+}
+
+.appointment-status.completed {
+    background-color: #e2e3e5;
+    color: #383d41;
+}
+
+.appointment-actions .btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+/* ========== LOADING STATE ========== */
+.loading {
+    text-align: center;
+    color: var(--text-light);
+    padding: 40px;
+    font-style: italic;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    background-color: var(--card-background);
+    text-align: center;
+    padding: 20px;
+    color: var(--text-light);
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #nav-links {
+        justify-content: center;
+    }
+    
+    .auth-form {
+        padding: 25px;
+    }
+    
+    .booking-buttons {
+        flex-direction: column;
+    }
+    
+    .appointment-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ========== EMPTY STATE ========== */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-light);
+}
+
+.empty-state h3 {
+    margin-bottom: 10px;
+}
